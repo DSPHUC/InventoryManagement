@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <th:block th:replace="~{layout/head}"></th:block>
+</head>
+
+<body>
+<div class="container-xxl position-relative bg-white d-flex p-0">
+    <!-- Sign Up Start -->
+    <div class="container-fluid">
+        <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h3>Sign Up</h3>
+                    </div>
+                    <form id="registerForm">
+                        <div class="form-floating mb-4">
+                            <input type="text"
+                                   class="form-control"
+                                   id="username"
+                                   name="username"
+                                   placeholder="Enter username">
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <input type="email"
+                                   class="form-control"
+                                   id="email"
+                                   name="email"
+                                   placeholder="Enter email">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <input type="password"
+                                   class="form-control"
+                                   id="password"
+                                   name="password"
+                                   placeholder="Enter Password">
+                            <label for="password">Password</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <input type="text"
+                                   class="form-control"
+                                   id="fullName"
+                                   name="fullName"
+                                   placeholder="Enter full name">
+                            <label for="fullName">Full name</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <input type="text"
+                                   class="form-control"
+                                   id="phoneNumber"
+                                   name="phoneNumber"
+                                   placeholder="Enter phone">
+                            <label for="phoneNumber">Phone number</label>
+                        </div>
+                        <div class="form-group">
+                            <button
+                                    type="submit"
+                                    id="signup"
+                                    class="btn btn-primary py-3 w-100 mb-4">
+                                Sign Up
+                            </button>
+                        </div>
+                    </form>
+                    <span class="text-center mb-0">Already have an Account?
+                                <a href="/login">Sign In</a>
+                            </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sign Up End -->
+</div>
+</body>
+<script src="/jquery/jquery-3.7.1.min.js"></script>
+<script src="/jquery/jquery.validate.min.js"></script>
+<script src="/assets/web-toast/src/webToast.js"></script>
+<script src="/myCustom/js/auth/register.js"></script>
+</html>

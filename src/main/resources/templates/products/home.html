@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <th:block th:replace="/layout/head"></th:block>
+</head>
+<body>
+<div class="container-xxl position-relative bg-white d-flex p-0">
+
+    <th:block th:replace="/layout/sidebar"></th:block>
+    <div class="content">
+        <th:block th:replace="/layout/navbar"></th:block>
+        <div class="container-fluid pt-4 px-4">
+            <div class="bg-light text-center rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0">Inventories</h6>
+                </div>
+                <div class="table-responsive">
+                    <table class="table text-start align-middle table-bordered table-hover mb-0">
+                        <thead>
+                        <tr class="text-dark">
+                            <th scope="col">Name</th>
+                            <th scope="col">Company</th>
+                            <th scope="col">Warehouse</th>
+                            <th scope="col">Inventories</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tBody">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-flex justify-content-center mt-3">
+                    <nav aria-label="..." style="display: inline-block">
+                        <ul class="pagination" id="pageInput">
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+        <th:block th:replace="/layout/footer"></th:block>
+    </div>
+</div>
+</body>
+<script src="/jquery/jquery-3.7.1.min.js"></script>
+<script src="/jquery/jquery.validate.min.js"></script>
+<script src="/assets/web-toast/src/webToast.js"></script>
+<script src="/myCustom/js/item/list.js"></script>
+</html>

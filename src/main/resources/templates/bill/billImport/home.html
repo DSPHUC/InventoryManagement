@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <th:block th:replace="/layout/head"></th:block>
+    <style>
+        .tb-modal-import{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-xxl position-relative bg-white d-flex p-0">
+
+    <th:block th:replace="/layout/sidebar"></th:block>
+    <div class="content">
+        <th:block th:replace="/layout/navbar"></th:block>
+        <div class="container-fluid pt-4 px-4">
+            <div class="bg-light text-center rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0">Bill Import</h6>
+                    <button type="button" class="btn btn-primary mt-2 mb-4" data-bs-toggle="modal"
+                            data-bs-target="#staticModal" id="create" onclick="showCreateBillImport()">
+                        Create Bill
+                    </button>
+                    <!--                    Modal   4-->
+                    <div class="modal fade" id="staticModal" data-bs-backdrop="static" data-bs-keyboard="false"
+                         tabindex="-1"
+                         aria-labelledby="staticModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" style="max-width: 800px">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticModalLabel">Create Bill Import</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="tb-modal-import">
+                                        <thead>
+                                            <tr>
+                                            <th>Name</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>Company</th>
+                                            <th>Warehouse</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody  id="tb-import-body">
+
+                                        </tbody>
+                                    </table>
+                                    <form id="billImportForm" enctype="multipart/form-data">
+                                        <div class="row">
+                                            <div id="formBody">
+
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" id="addProductImport">
+                                                Add
+                                            </button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                Close
+                                            </button>
+                                            <button type="button" class="btn btn-primary" id="saveChangesButton">
+                                                Save changes
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table text-start align-middle table-bordered table-hover mb-0">
+                        <thead>
+                        <tr class="text-dark">
+                            <th scope="col">Id</th>
+                            <th scope="col">Creator</th>
+                            <th scope="col">Create date</th>
+                            <th scope="col">Total Bill</th>
+<!--                            <th scope="col">Detail</th>-->
+                        </tr>
+                        </thead>
+                        <tbody id="tBody">
+
+                        </tbody>
+                    </table>
+                </div>
+                <!--                <div style="text-align: center;width: 100%" id="searchpagi">-->
+                <div class="d-flex justify-content-center mt-3">
+                    <nav aria-label="..." style="display: inline-block">
+                        <ul class="pagination" id="pageInput">
+
+                        </ul>
+                    </nav>
+                    <!--                    </div>-->
+                </div>
+            </div>
+
+        </div>
+        <th:block th:replace="/layout/footer"></th:block>
+    </div>
+
+</div>
+</body>
+<script>
+    let productImport = {
+        "productImportDetailRequests": [
+        ]
+    }
+    let productList = [];
+    let warehouseList = [];
+    let companyList= [];
+</script>
+<script src="/jquery/jquery-3.7.1.min.js"></script>
+<script src="/jquery/jquery.validate.min.js"></script>
+<script src="/assets/web-toast/src/webToast.js"></script>
+<script src="/myCustom/js/bill/billImport/list.js"></script>
+<script src="/myCustom/js/bill/base.js"></script>
+<script src="/myCustom/js/bill/billImport/modal-bill-import.js"></script>
+</html>
